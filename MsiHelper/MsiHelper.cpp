@@ -49,6 +49,7 @@ int main(int argc, char **argv) {
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	if (argc < 2) {
 		printUsage();
+		return 1;
 	}
 
 	auto command = std::string(argv[1]);
@@ -61,6 +62,7 @@ int main(int argc, char **argv) {
 		std::wcout << L"Command " << wcommand << L" not recognized." << std::endl;
 
 		printUsage();
+		return 1;
 	}
 
 	return 0;
